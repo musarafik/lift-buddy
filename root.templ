@@ -1,0 +1,15 @@
+package main
+
+import "strconv"
+
+templ root(currDayOfWeek string, exercises []Exercise) { 
+    <div>
+        <h1>Today is { currDayOfWeek }</h1>
+        <h1>Your workout for today is:</h1>
+        <ul>
+            for _, exercise := range exercises {
+                <li>{ exercise.Name } { strconv.Itoa(exercise.Weight) }lbs { strconv.Itoa(exercise.Sets) }x{ strconv.Itoa(exercise.Reps) }</li>
+            } 
+        </ul>
+    </div> 
+}
